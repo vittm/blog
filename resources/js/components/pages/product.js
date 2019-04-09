@@ -44,11 +44,10 @@ class Product extends Component {
         return (
             <div>
                 <h1>Products List - Demo</h1>
-
                 <div className="row">
                     <div className="col-md-10"></div>
                     <div className="col-md-2">
-                        <input data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" value="Add Product" className="btn btn-success"></input>
+                        <button className="btn btn--l" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" value="Add Product" className="btn btn-success">Add Product</button>
                     </div>
                     </div><br />
                 <table className="table table-hover">
