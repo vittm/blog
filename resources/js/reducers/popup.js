@@ -1,5 +1,5 @@
 const initPopupState = {
-    isShowHideen : true
+    isShowHidden : false
 }
 
 export const Popup = (state = initPopupState, action) => {
@@ -7,10 +7,10 @@ export const Popup = (state = initPopupState, action) => {
       case 'IS_SHOW_HIDDEN':
         return {
           ...state,
-          isShowHideen: !state.isShowHideen,
+          isShowHidden: !state.isShowHidden,
         };
       default:
         return state;
     }
-  };
+};
   

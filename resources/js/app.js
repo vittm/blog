@@ -1,15 +1,47 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes React and other helpers. It's a great starting point while
- * building robust, powerful web applications using React + Laravel.
- */
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter, Router} from 'react-router-dom';
+import Index from "./components/index";
+import store from "./store";
+import {Provider, connect} from "react-redux";
+import { createBrowserHistory } from 'history';
+import EventBus from './lib/utill/eventbus';
 
-require('./bootstrap');
+const ChatWapper = connect(
+    function mapStateToProps(state) {
+        return{
+            popup: state.popup
+        };
+    },
+    function mapDispatchToProps(dispatch) {
+		const zdispatch = (evt, reduxOnly) => {			
+			dispatch(evt);
 
-/**
- * Next, we will create a fresh React component instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+			// migrating to another event system.
+			if (!reduxOnly)
+				EventBus.send(evt.type, evt.payload);
+		}
+		return {
+			dispatch: zdispatch
+		};
+	}
+)(Index);
 
-require('./main');
+
+class App extends Component {
+    render() {
+        return (
+            <Provider store={store}>
+                <Router history={createBrowserHistory()}>
+                    <BrowserRouter basename='/blog/public'>
+                        <ChatWapper/>
+                    </BrowserRouter>
+                </Router>
+            </Provider>
+        )
+    }
+}
+if (document.getElementById('app')) {
+    ReactDOM.render(<App />, document.getElementById('app'));
+}
+export default App
