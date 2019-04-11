@@ -33,7 +33,7 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <Router history={createBrowserHistory()}>
-                    <BrowserRouter basename='/blog/public'>
+                    <BrowserRouter basename='/point/public'>
                         <ChatWapper/>
                     </BrowserRouter>
                 </Router>

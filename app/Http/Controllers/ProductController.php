@@ -41,8 +41,6 @@ class ProductController extends Controller
             'body' => $request->get('body')
         ]);
         $product->save();
-
-
         return response()->json('Product Added Successfully.');
     }
 
