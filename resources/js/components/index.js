@@ -8,7 +8,7 @@ class Index extends Component {
         return(
             <div>
                 <Header></Header>
-                <RouterPath></RouterPath>
+                <RouterPath dispatch={this.props.dispatch}></RouterPath>
                 <Footer></Footer>
             </div>
         )

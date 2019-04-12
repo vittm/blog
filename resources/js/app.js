@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Router} from 'react-router-dom';
 import Index from "./components/index";
-import store from "./store";
+import store from "./events";
 import {Provider, connect} from "react-redux";
 import { createBrowserHistory } from 'history';
 import EventBus from './lib/utill/eventbus';
@@ -20,11 +20,11 @@ const ChatWapper = connect(
 			// migrating to another event system.
 			if (!reduxOnly)
 				EventBus.send(evt.type, evt.payload);
-		}
+        }
 		return {
 			dispatch: zdispatch
 		};
-	}
+	}   
 )(Index);
 
 
@@ -39,6 +39,7 @@ class App extends Component {
                 </Router>
             </Provider>
         )
+        
     }
 }
 if (document.getElementById('app')) {

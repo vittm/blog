@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class Modal extends Component {
     render() {
+        console.log(this.props);
         return (
             <div className={"modal fade" + this.props.state.isShowHidden ? " show" : "" } 
                 id="exampleModal" style={{display:"none"}} aria-hidden="true">

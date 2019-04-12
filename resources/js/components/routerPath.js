@@ -9,7 +9,7 @@ class RouterPath extends Component {
             <Switch>
                 <main id="main">
                     <Route exact path='/' component={Hihi} />
-                    <Route  path='/product' component={Product} />
+                    <Route  path='/product' render={(props) => <Product {...props} dispatch={this.props.dispatch} />} />
                 </main>
             </Switch>
         )

@@ -50,7 +50,6 @@ class Product extends Component {
         });
     }
     render() {
-        console.log(this.props);
         return (
             <div>
                 <div className="row">
@@ -78,5 +77,4 @@ class Product extends Component {
         )
     }
 }
-
 export default Product
