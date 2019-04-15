@@ -19,7 +19,9 @@ class Product extends Component {
             })
     }
     shouldComponentUpdate(nextProps,nextSate){
-        console.log(this.props);
+        return (
+            this.props.popup !== nextProps
+            );
     }
     tabRow() {
         if(this.state.products instanceof Array){
