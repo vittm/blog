@@ -21,7 +21,7 @@ class Product extends Component {
     shouldComponentUpdate(nextProps,nextSate){
         return (
             this.props.popup !== nextProps
-            );
+        );
     }
     tabRow() {
         if(this.state.products instanceof Array){
@@ -76,7 +76,10 @@ class Product extends Component {
                         { this.tabRow() }
                     </tbody>
                 </table>
-                <Modal></Modal>
+                <Modal
+                    dispatch = {this.props.dispatch} 
+                    popup = { this.props.popup }
+                ></Modal>
             </div>
         )
     }

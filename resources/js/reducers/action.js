@@ -6,5 +6,6 @@
 // 	return obj;
 // } //unique
 export const PopupActions= {
-    IS_SHOW_HIDDEN: 'IS_SHOW_HIDDEN'
+	IS_SHOW_HIDDEN: 'IS_SHOW_HIDDEN',
+	HIDDEN_POPUP: 'HIDDEN_POPUP'
 };

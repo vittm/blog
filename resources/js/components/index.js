@@ -8,7 +8,7 @@ class Index extends Component {
         console.log(this.props);
         return(
             <div>
-                <Header></Header>
+                <Header popup= {this.props.popup }></Header>
                 <RouterPath popup= {this.props.popup } dispatch={this.props.dispatch}></RouterPath>
                 <Footer></Footer>
             </div>

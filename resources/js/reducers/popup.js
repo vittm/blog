@@ -9,6 +9,11 @@ export const Popup = (state = initPopupState, action) => {
           ...state,
           isShowHidden: !state.isShowHidden,
         };
+      case 'HIDDEN_POPUP':
+        return {
+          ...state,
+          isHidden: !state.isShowHidden
+        }
       default:
         return state;
     }
