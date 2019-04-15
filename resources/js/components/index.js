@@ -5,10 +5,11 @@ import RouterPath from "./routerPath";
 
 class Index extends Component {
     render(){
+        console.log(this.props);
         return(
             <div>
                 <Header></Header>
-                <RouterPath dispatch={this.props.dispatch}></RouterPath>
+                <RouterPath popup= {this.props.popup } dispatch={this.props.dispatch}></RouterPath>
                 <Footer></Footer>
             </div>
         )

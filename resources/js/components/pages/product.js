@@ -18,7 +18,9 @@ class Product extends Component {
                 console.log(error);
             })
     }
-
+    shouldComponentUpdate(nextProps,nextSate){
+        console.log(this.props);
+    }
     tabRow() {
         if(this.state.products instanceof Array){
             return this.state.products.map(function(object, i){
